@@ -1,0 +1,16 @@
+body {
+    font-family: system-ui;
+    color: pink;
+}
+
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: solid red;
+}
+
+
+
+

@@ -19,8 +19,15 @@ app = Flask(__name__)
 #-----------------------------------------------------------
 @app.get("/")
 def show_welcome():
-    return "Hello!"
+    return render_template("pages/home.jinja")
 
+
+#-----------------------------------------------------------
+# Demo
+#-----------------------------------------------------------
+@app.get("/demo")
+def show_demo_message():
+    return render_template("pages/demo.jinja")
 
 #===========================================================
 # Configure the app

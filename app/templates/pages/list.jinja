@@ -1,0 +1,16 @@
+{% extends "pages/_base.jinja" %}
+
+{% block content%}
+
+<h1>Lists Of Cats</h1>
+
+<p>The Lists below comes from data passed in...</p>
+
+<ul>
+
+{% for cat in cats %}
+<li>{{ cat }}</li>
+{% endfor %}
+</ul>
+
+ {% endblock %}

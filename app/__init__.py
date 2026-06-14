@@ -26,7 +26,7 @@ cats = [
 ]
 
 def get_cat(id):
-    return 
+    return next((item for item in cats if item["id"] == id), None)
 
 
 #===========================================================
@@ -60,12 +60,22 @@ def show_message_with_id(id):
 #-----------------------------------------------------------
 # Lists of data
 #-----------------------------------------------------------
-@app.get("/list")
+@app.get("/cats")
 def show_message_with_list():
 
-    return render_template("pages/list.jinja", cats=cats)
+    return render_template("pages/cats.jinja", cats=cats)
 
+#-----------------------------------------------------------
+# Specific Cat
+#-----------------------------------------------------------
+@app.get("/cat/<int:id>")
+def show_a_cat(id):
+    cat = get_cat(id)
 
+    if cat:
+        return render_template("pages/cat.jinja", cat=cat)
+    else:
+        abort(404)
 
 #===========================================================
 # Configure the app
